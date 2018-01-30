@@ -4,9 +4,63 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Zadania"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+        mc:Ignorable="d" Background="#A27700"
+        Title="MainWindow" Height="600" Width="800">
+    <Border Padding="20">
+        <Grid Background="#606060">
+            
+            <!-- Define Column = 2-->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            
+            <!-- Define Rows = 3-->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Column="1" Grid.Row="0" Text="Sortuj" HorizontalAlignment="Center" FontSize="30" FontFamily="SimSun" Foreground="#FFCBC5C5" />
+                
+                <!--Termin-->
+                <TextBlock Grid.Column="0" Grid.Row="1" Text="Termin" HorizontalAlignment="Center" FontSize="20" FontFamily="SimSun" Foreground="#FFCBC5C5" />
+                <ComboBox Grid.Column="0" Grid.Row="2" SelectedIndex="0">
+                    <ComboBoxItem Content="Najwcześniej" />
+                    <ComboBoxItem Content="Najpożniej"/>
+                </ComboBox>
+
+                <!--Priorytet-->
+                <TextBlock Grid.Column="1" Grid.Row="1" Text="Priorytet" HorizontalAlignment="Center" FontSize="20" FontFamily="SimSun" Foreground="#FFCBC5C5" />
+                <ComboBox Grid.Column="1" Grid.Row="2" SelectedIndex="1">
+                    <ComboBoxItem Content="Niski" />
+                    <ComboBoxItem Content="Normalny"/>
+                    <ComboBoxItem Content="Wysoki"/>
+                </ComboBox>
+
+                <!--Status-->
+                <TextBlock Grid.Column="2" Grid.Row="1" Text="Status" HorizontalAlignment="Center" FontSize="20" FontFamily="SimSun" Foreground="#FFCBC5C5" />
+                <ComboBox Grid.Column="2" Grid.Row="2" SelectedIndex="0">
+                    <ComboBoxItem Content="Nowy" />
+                    <ComboBoxItem Content="W Realizacji"/>
+                    <ComboBoxItem Content="Zakończony"/>
+                </ComboBox>
+            </Grid>
+                
+        </Grid>
+    </Border>
 </Window>
