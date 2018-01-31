@@ -8,45 +8,46 @@
         Title="MainWindow" Height="600" Width="800">
     <Border Padding="20">
         <Grid Background="#606060">
-            
+
             <!-- Define Column = 2-->
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            
+
             <!-- Define Rows = 3-->
             <Grid.RowDefinitions>
                 <RowDefinition Height="2*"/>
                 <RowDefinition Height="5*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
+            
+            <!-- Sorting -->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
 
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
                 <TextBlock Grid.Column="1" Grid.Row="0" Text="Sortuj" HorizontalAlignment="Center" FontSize="30" FontFamily="SimSun" Foreground="#FFCBC5C5" />
-                
+
                 <!--Termin-->
                 <TextBlock Grid.Column="0" Grid.Row="1" Text="Termin" HorizontalAlignment="Center" FontSize="20" FontFamily="SimSun" Foreground="#FFCBC5C5" />
-                <ComboBox Grid.Column="0" Grid.Row="2" SelectedIndex="0">
+                <ComboBox Margin="0 0 5 0" VerticalAlignment="Center" Grid.Column="0" Grid.Row="2" SelectedIndex="0">
                     <ComboBoxItem Content="Najwcześniej" />
                     <ComboBoxItem Content="Najpożniej"/>
                 </ComboBox>
 
                 <!--Priorytet-->
                 <TextBlock Grid.Column="1" Grid.Row="1" Text="Priorytet" HorizontalAlignment="Center" FontSize="20" FontFamily="SimSun" Foreground="#FFCBC5C5" />
-                <ComboBox Grid.Column="1" Grid.Row="2" SelectedIndex="1">
+                <ComboBox VerticalAlignment="Center" Grid.Column="1" Grid.Row="2" SelectedIndex="1">
                     <ComboBoxItem Content="Niski" />
                     <ComboBoxItem Content="Normalny"/>
                     <ComboBoxItem Content="Wysoki"/>
@@ -54,13 +55,113 @@
 
                 <!--Status-->
                 <TextBlock Grid.Column="2" Grid.Row="1" Text="Status" HorizontalAlignment="Center" FontSize="20" FontFamily="SimSun" Foreground="#FFCBC5C5" />
-                <ComboBox Grid.Column="2" Grid.Row="2" SelectedIndex="0">
+                <ComboBox Margin="5 0 0 0" VerticalAlignment="Center" Grid.Column="2" Grid.Row="2" SelectedIndex="0">
                     <ComboBoxItem Content="Nowy" />
                     <ComboBoxItem Content="W Realizacji"/>
                     <ComboBoxItem Content="Zakończony"/>
                 </ComboBox>
             </Grid>
-                
+            
+            <!-- Exercises -->
+            <Grid Grid.Column="0" Grid.Row="1" Margin="0 5">
+                <StackPanel x:Name="Zbior">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Foreground="#e33b06" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="0" Text="Temat" FontSize="18" />
+                        <TextBlock Foreground="#e33b06" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="1" Text="Data" FontSize="18"/>
+                        <TextBlock Foreground="#e33b06" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="0" Text="Priorytet" FontSize="18"/>
+                        <TextBlock Foreground="#e33b06" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="1" Text="Status" FontSize="18"/>
+                    </Grid>
+                </StackPanel>
+            </Grid>
+            
+            <!--Next And Last -->
+            <Grid Grid.Column="0" Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Button Background="#999793" Margin="5 0 5 0" x:Name="btnPoprzedni" Grid.Column="0" Grid.Row="1" Content="Poprzedni" />
+                <Button Background="#999793" Margin="5 0 5 0" x:Name="btnNastepny" Grid.Column="1" Grid.Row="1" Content="Nastepny" />
+            </Grid>
+            
+            <!-- Add -->
+            <Grid Grid.Column="1" Grid.Row="0" Margin="30 0 0 0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Button x:Name="btnDodaj" Margin="7" Grid.Column="0" Grid.Row="1" Content="Dodaj Nowe Zadanie"/>
+                    <Image Grid.Column="1" Grid.Row="1" Source="/img/mark.jpg" Margin="7" HorizontalAlignment="Left"/>
+                </Grid>
+            </Grid>
+            
+            <!-- Content -->
+            <Grid Grid.Column="1" Grid.Row="1">
+                <TextBlock TextWrapping="Wrap" Foreground="#FFCBC5C5"
+                    Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ullamcorper ligula id lectus ullamcorper vulputate. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce semper nisi ut nisl cursus, vitae fermentum leo ornare. Fusce eleifend neque in tincidunt vulputate. Morbi in vestibulum lorem. Suspendisse potenti. Mauris aliquet sed justo vel lobortis. Sed odio libero, ornare egestas sollicitudin nec, fermentum eget neque. Cras luctus purus vitae nisi rutrum elementum sed sed sapien. Suspendisse semper eros libero, non mollis velit condimentum condimentum. Cras sit amet mattis nulla. Fusce vel libero et massa faucibus tristique quis sed ex. Proin pellentesque nec ex a congue. Aenean commodo ultricies lectus, sed tincidunt tellus posuere quis. In porta maximus pellentesque.
+
+Sed finibus pulvinar eros ac pharetra. Curabitur sed efficitur libero. Aenean tempus, est eget aliquam laoreet, sapien felis elementum arcu, eget viverra lacus enim in nibh. Sed blandit at dui faucibus tincidunt. Suspendisse sit amet maximus diam. Aliquam purus dui, sollicitudin eget aliquet a, finibus eget massa. Donec in dolor consectetur, tincidunt nunc quis, molestie dui. Vestibulum venenatis massa id lacus egestas, ut iaculis dui interdum. Sed vestibulum vehicula sodales. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi vel erat porttitor, faucibus lectus a, efficitur sapien.
+
+Sed porttitor augue id euismod euismod. Vivamus vel dolor a enim blandit vulputate. Sed eu placerat nibh. Mauris feugiat mauris a hendrerit condimentum. Curabitur vulputate aliquet quam at sagittis. Nam feugiat convallis rhoncus. Quisque id mi id arcu consequat congue et vestibulum mauris. Vestibulum purus dui, sollicitudin sed lorem a, porttitor tempor mi. Vestibulum varius gravida quam vel euismod. Quisque non ante et metus malesuada dapibus at eu nisl. Cras quam magna, venenatis in augue in, dignissim porttitor elit. Nulla facilisi. Donec ac pharetra felis.
+
+Morbi nec massa at erat pharetra sagittis. Curabitur gravida sem id risus finibus, et viverra nisi gravida. Pellentesque faucibus tincidunt odio ut iaculis. Nunc tellus nulla, facilisis vitae sagittis eget, iaculis tincidunt sem. Donec congue, tellus a ullamcorper ornare, diam quam mattis lectus, at dapibus lectus dui nec nibh. Integer cursus nunc non magna faucibus tincidunt. Nullam ante erat, pharetra non erat id, sagittis ultricies ante. Donec quis sem mauris. Curabitur mauris nunc, dignissim et lectus id, feugiat aliquet augue. Sed pharetra lectus vitae nisi pharetra pulvinar. Nunc quam libero, venenatis eu urna a, rhoncus ultrices urna. Curabitur luctus maximus mi sed dignissim. Pellentesque viverra tortor ut metus feugiat, eget rutrum odio blandit. Nulla sit amet finibus urna. Etiam ac cursus ipsum.
+
+Donec tempor varius feugiat. Ut consequat dapibus neque. Suspendisse potenti. Donec felis massa, maximus nec felis in, sagittis hendrerit tellus. Praesent elit nunc, dictum at ultricies sit amet, condimentum ac ante. Morbi malesuada ornare vestibulum. Donec hendrerit orci leo, in venenatis ligula rutrum in. Nam egestas rutrum nisi, molestie tincidunt metus posuere eu. Aliquam condimentum ipsum ut lectus vulputate, eu placerat erat lobortis. Vestibulum sollicitudin pretium dolor, at fringilla arcu. Donec vitae tristique nunc. Duis sed dolor hendrerit, interdum turpis quis, tempus odio. Phasellus nisl est, vehicula ut urna non, vulputate pulvinar nulla. Maecenas sit amet volutpat est, vel maximus augue. Vivamus blandit vehicula magna, ut mattis magna porttitor vitae.
+
+Quisque a dapibus odio. Curabitur non arcu vel augue hendrerit elementum id sit amet urna. Sed varius, quam in pulvinar lacinia, diam leo tincidunt velit, ut ornare lectus nibh in sapien. Etiam elit dui, sodales ut sollicitudin nec, dignissim et tellus. Donec diam leo, hendrerit non est sit amet, sodales imperdiet libero. Sed cursus eros sed sodales accumsan. Morbi at molestie dolor. Quisque mattis lacinia massa, vel sagittis metus euismod sed.
+
+Etiam ac quam nec elit rhoncus dictum sit amet sit amet mauris. Cras finibus sed est sit amet fringilla. Morbi sem elit, fringilla nec turpis ut, porta vulputate nulla. Sed vulputate ornare fermentum. Vestibulum pharetra lacus ut leo viverra faucibus. Vivamus id pellentesque quam. Mauris non scelerisque nisl, ac elementum ex. Donec blandit metus a erat vulputate, non bibendum dolor varius. Vivamus nec mauris arcu. Pellentesque eget diam at velit euismod accumsan. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam laoreet ultrices sem, sit amet dignissim risus. Vivamus dictum pharetra lorem, a ullamcorper diam gravida eget. Proin sed faucibus justo.
+
+Nunc ligula nunc, maximus vel consectetur et, congue quis diam. Fusce eu pharetra sem, quis condimentum dolor. Curabitur gravida purus non lorem scelerisque, in vestibulum tortor lobortis. Donec at ex vel mauris efficitur ullamcorper eget ut velit. Quisque ut euismod nisl, at eleifend massa. Fusce et justo consectetur, porttitor neque eget, volutpat risus. Morbi congue commodo vestibulum. Aliquam dictum id tellus at porta. Vivamus sed rhoncus augue, nec ornare ex. Nulla et ipsum eros. Nulla suscipit nulla viverra risus blandit placerat. Phasellus lacinia, diam et venenatis maximus, dui neque blandit ex, sit amet ultricies odio enim eu magna. Morbi vitae dui placerat, varius orci sit amet, tristique lorem. Aliquam ornare purus ligula, et dignissim tellus dignissim et.
+
+Etiam hendrerit, dolor volutpat ullamcorper accumsan, odio ligula aliquam libero, eu vehicula lacus ante quis enim. Phasellus imperdiet imperdiet diam, in consequat nisl aliquet gravida. Sed velit turpis, accumsan eu commodo vitae, lobortis vitae ex. Donec luctus quam a nunc blandit, a ullamcorper tortor viverra. Cras venenatis in odio et ornare. Nam consectetur neque lectus. Duis nec magna nec nisl vulputate dapibus. Ut eget lorem semper, tincidunt magna vel, consectetur justo. Quisque feugiat elit hendrerit, posuere nisl quis, ultrices nisl. In ac dui ipsum.
+
+Phasellus vitae iaculis tortor, et finibus diam. Aliquam fringilla ornare urna eu luctus. Pellentesque suscipit, augue ac imperdiet egestas, eros mi tempus purus, vitae porttitor ex urna in est. Sed ac ullamcorper quam. Ut justo nunc, interdum eu luctus eu, malesuada sed urna. Pellentesque blandit est ac eros cursus ultrices. Praesent ultricies elit ligula, in ultricies tellus volutpat ac. Fusce id sapien augue. Ut a nunc gravida nisl bibendum sodales. Vivamus sit amet ornare diam. Vestibulum euismod leo at bibendum ornare. Vivamus risus elit, accumsan eu quam vitae, consequat sollicitudin felis. Aenean quis blandit tellus. Donec porta felis eget sapien."
+                    
+                 />
+            </Grid>
+            
+            <!-- Delete & Modify -->
+            <Grid Grid.Column="1" Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Button Background="#d10506" Margin="5 0 5 0" x:Name="btnDelete" Grid.Column="0" Grid.Row="1" Content="Usun" />
+                <Button Background="#e7d824" Margin="5 0 5 0" x:Name="btnModify" Grid.Column="1" Grid.Row="1" Content="Zmodyfikuj" />
+            </Grid>
         </Grid>
     </Border>
 </Window>
