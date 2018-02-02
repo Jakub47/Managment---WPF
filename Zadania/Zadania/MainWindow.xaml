@@ -65,7 +65,7 @@
             <!-- Exercises -->
             <Grid Grid.Column="0" Grid.Row="1" Margin="0 5">
                 <StackPanel x:Name="Zbior">
-                    <Grid>
+                    <Grid x:Name="gdZadanie">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
@@ -76,10 +76,10 @@
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
 
-                        <TextBlock Foreground="#e33b06" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="0" Text="Temat" FontSize="18" />
-                        <TextBlock Foreground="#e33b06" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="1" Text="Data" FontSize="18"/>
-                        <TextBlock Foreground="#e33b06" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="0" Text="Priorytet" FontSize="18"/>
-                        <TextBlock Foreground="#e33b06" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="1" Text="Status" FontSize="18"/>
+                        <TextBlock x:Name="txtTemat" Foreground="#e33b06" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="0" Text="Temat" FontSize="18" />
+                        <TextBlock x:Name="txtPriorytet" Foreground="#e33b06" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="1" Text="Data" FontSize="18"/>
+                        <TextBlock x:Name="txtData" Foreground="#e33b06" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="0" Text="Priorytet" FontSize="18"/>
+                        <TextBlock x:Name="txtStatus" Foreground="#e33b06" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="1" Text="Status" FontSize="18"/>
                     </Grid>
                 </StackPanel>
             </Grid>
