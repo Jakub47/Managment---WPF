@@ -12,3 +12,5 @@ C:\Users\Ragnus\Desktop\WPF\WPF\Zadania\Zadania\obj\Debug\Zadania.Properties.Res
 C:\Users\Ragnus\Desktop\WPF\WPF\Zadania\Zadania\obj\Debug\Zadania.csproj.GenerateResource.Cache
 C:\Users\Ragnus\Desktop\WPF\WPF\Zadania\Zadania\obj\Debug\Zadania.exe
 C:\Users\Ragnus\Desktop\WPF\WPF\Zadania\Zadania\obj\Debug\Zadania.pdb
+C:\Users\Ragnus\Desktop\WPF\WPF\Zadania\Zadania\bin\Debug\MySql.Data.dll
+C:\Users\Ragnus\Desktop\WPF\WPF\Zadania\Zadania\bin\Debug\MySql.Data.xml
