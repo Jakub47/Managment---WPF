@@ -44,5 +44,9 @@ namespace Zadania.Models
             Temat = tT; priorytet = pR; Termin = tR; Status = sT;
         }
 
+        public Zadanie()
+        {
+            Temat = ""; priorytet = ""; Termin = DateTime.Now; Status = "";
+        }
     }
 }
