@@ -14,3 +14,19 @@ C:\Users\Ragnus\Desktop\WPF\WPF\Zadania\Zadania\obj\Debug\Zadania.exe
 C:\Users\Ragnus\Desktop\WPF\WPF\Zadania\Zadania\obj\Debug\Zadania.pdb
 C:\Users\Ragnus\Desktop\WPF\WPF\Zadania\Zadania\bin\Debug\MySql.Data.dll
 C:\Users\Ragnus\Desktop\WPF\WPF\Zadania\Zadania\bin\Debug\MySql.Data.xml
+C:\Users\Ragnus\Desktop\Graphic applications\WPF\Zadania\Zadania\bin\Debug\Zadania.exe.config
+C:\Users\Ragnus\Desktop\Graphic applications\WPF\Zadania\Zadania\obj\Debug\Zadania.exe
+C:\Users\Ragnus\Desktop\Graphic applications\WPF\Zadania\Zadania\obj\Debug\Zadania.pdb
+C:\Users\Ragnus\Desktop\Graphic applications\WPF\Zadania\Zadania\bin\Debug\Zadania.exe
+C:\Users\Ragnus\Desktop\Graphic applications\WPF\Zadania\Zadania\bin\Debug\Zadania.pdb
+C:\Users\Ragnus\Desktop\Graphic applications\WPF\Zadania\Zadania\bin\Debug\MySql.Data.dll
+C:\Users\Ragnus\Desktop\Graphic applications\WPF\Zadania\Zadania\bin\Debug\MySql.Data.xml
+C:\Users\Ragnus\Desktop\Graphic applications\WPF\Zadania\Zadania\obj\Debug\Zadania.csprojResolveAssemblyReference.cache
+C:\Users\Ragnus\Desktop\Graphic applications\WPF\Zadania\Zadania\obj\Debug\MainWindow.g.cs
+C:\Users\Ragnus\Desktop\Graphic applications\WPF\Zadania\Zadania\obj\Debug\App.g.cs
+C:\Users\Ragnus\Desktop\Graphic applications\WPF\Zadania\Zadania\obj\Debug\Zadania_MarkupCompile.cache
+C:\Users\Ragnus\Desktop\Graphic applications\WPF\Zadania\Zadania\obj\Debug\Zadania_MarkupCompile.lref
+C:\Users\Ragnus\Desktop\Graphic applications\WPF\Zadania\Zadania\obj\Debug\MainWindow.baml
+C:\Users\Ragnus\Desktop\Graphic applications\WPF\Zadania\Zadania\obj\Debug\Zadania.g.resources
+C:\Users\Ragnus\Desktop\Graphic applications\WPF\Zadania\Zadania\obj\Debug\Zadania.Properties.Resources.resources
+C:\Users\Ragnus\Desktop\Graphic applications\WPF\Zadania\Zadania\obj\Debug\Zadania.csproj.GenerateResource.Cache
