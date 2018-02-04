@@ -48,5 +48,10 @@ namespace Zadania.Models
         {
             Temat = ""; priorytet = ""; Termin = DateTime.Now; Status = "";
         }
+
+        public override string ToString()
+        {
+            return Temat + "\t\t\t" + Priorytet + "\n" + Convert.ToString(Termin) + "\t" + Status;
+        }
     }
 }

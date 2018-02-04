@@ -57,6 +57,7 @@ namespace Zadania
             {
                 Grid dodaj = new Grid();
                 createGrid(gdZadanie, dodaj, ListZZadaniami.ListZadan.ElementAtOrDefault(i));
+                ZbiorZadan.Children.Add(dodaj);
             }
                     //1) Proba
             //Grid newOne = new Grid(); createGrid(gdZadanie, newOne);
@@ -80,18 +81,7 @@ namespace Zadania
         private void createGrid(Grid original,Grid clone,Zadanie element)
         {
             TextBlock t = new TextBlock(); t.Text = "";
-            if (!(element.Priorytet.Equals(string.Empty)))
-                t.Text += element.Temat;
-
-            if (!(element.Priorytet.Equals(string.Empty)))
-                t.Text += element.Priorytet;
-
-            if (!(element.Termin.Equals(string.Empty)))
-                t.Text += Convert.ToString(element.Termin);
-
-            if (!(element.Status.Equals(string.Empty)))
-                t.Text += element.Status;
-
+            t.Text += element.ToString(); t.Foreground = new SolidColorBrush(Colors.Blue); t.FontSize = 18;
             clone.Children.Add(t);
         }
     }
