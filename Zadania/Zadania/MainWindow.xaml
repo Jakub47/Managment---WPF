@@ -114,7 +114,7 @@
                         <RowDefinition/>
                     </Grid.RowDefinitions>
 
-                    <Button x:Name="btnDodaj" Margin="7" Grid.Column="0" Grid.Row="1" Content="Dodaj Nowe Zadanie"/>
+                    <Button Click="btnDodaj_Click" x:Name="btnDodaj" Margin="7" Grid.Column="0" Grid.Row="1" Content="Dodaj Nowe Zadanie"/>
                     <Image Grid.Column="1" Grid.Row="1" Source="/img/mark.jpg" Margin="7" HorizontalAlignment="Left"/>
                 </Grid>
             </Grid>

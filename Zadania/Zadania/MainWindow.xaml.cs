@@ -15,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Zadania.Models;
+using Zadania.Views;
 
 namespace Zadania
 {
@@ -23,18 +24,20 @@ namespace Zadania
     /// </summary>
     public partial class MainWindow : Window
     {
+        Connect connect
         public MainWindow()
         {
             InitializeComponent();
-            string connectionString = "SERVER=localhost;DATABASE=zadania;UID=root;PASSWORD=;";
 
-            MySqlConnection connection = new MySqlConnection(connectionString); //Connect to our local database => Get Access
+            //string connectionString = "SERVER=localhost;DATABASE=zadania;UID=root;PASSWORD=;";
+            //MySqlConnection connection = new MySqlConnection(connectionString); //Connect to our local database => Get Access
+            connect = new Connect();
 
-            MySqlCommand cmd = new MySqlCommand("select * from dane", connection);
-            connection.Open();
+            MySqlCommand cmd = new MySqlCommand("select * from dane", connect.Connection);
+            connect.Connection.Open();
             DataTable dt = new DataTable();
             dt.Load(cmd.ExecuteReader()); //cmd.ExecuteReader() == This will execute the query. || dt.Load == Load all the result to variable
-            connection.Close();
+            connect.Connection.Close();
 
             //List<DataRow> list = dt.AsEnumerable().ToList();
             // For each row, print the values of each column.
@@ -59,23 +62,7 @@ namespace Zadania
                 createGrid(gdZadanie, dodaj, ListZZadaniami.ListZadan.ElementAtOrDefault(i));
                 ZbiorZadan.Children.Add(dodaj);
             }
-                    //1) Proba
-            //Grid newOne = new Grid(); createGrid(gdZadanie, newOne);
-            //Grid w = new Grid(); createGrid(gdZadanie, w);
-            //ZbiorZadan.Children.Add(newOne);
-            //ZbiorZadan.Children.Add(w);
-                    
-                    //2)Proba
-            ///Stworz z tego metode i tworzy nowe Gridy pozniej dodawaj je do StackPanela
-            //ColumnDefinition q = new ColumnDefinition(); q.Width = GridLength.Auto;
-            //ColumnDefinition c = new ColumnDefinition(); c.Width = GridLength.Auto;
-            //Grid k = new Grid(); k.ColumnDefinitions.Add(q); k.ColumnDefinitions.Add(c);
 
-            //RowDefinition w = new RowDefinition(); w.Height = GridLength.Auto;
-            //RowDefinition h = new RowDefinition(); h.Height = GridLength.Auto;
-            //k.RowDefinitions.Add(w); k.RowDefinitions.Add(h);
-            //TextBlock s = new TextBlock(); s.Text = "as";
-            //k.Children.Add(s);
         }
 
         private void createGrid(Grid original,Grid clone,Zadanie element)
@@ -83,6 +70,13 @@ namespace Zadania
             TextBlock t = new TextBlock(); t.Text = "";
             t.Text += element.ToString(); t.Foreground = new SolidColorBrush(Colors.Blue); t.FontSize = 18;
             clone.Children.Add(t);
+        }
+
+        private void btnDodaj_Click(object sender, RoutedEventArgs e)
+        {
+            //Create a Logic for adding a new Task to the DataBase! Also remember about refreshing!!!!
+            this.Hide();
+            AddingTask aT = new AddingTask();  aT.Show();
         }
     }
 }
