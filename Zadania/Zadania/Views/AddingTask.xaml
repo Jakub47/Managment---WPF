@@ -1,0 +1,80 @@
+﻿<Window x:Class="Zadania.Views.AddingTask"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Zadania.Views"
+        mc:Ignorable="d"
+        Title="AddingTask" Height="600" Width="373">
+    <Border Padding="20">
+        <Grid>
+            <!-- Put
+        1)All field's for Zadanie + Calendar -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Temat_Priorytet_Termin_Status -->
+            <Grid x:Name="gdZero" Grid.Row="0">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="4*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="Temat" Grid.Column="0" Grid.Row="0"/>
+                <TextBox x:Name="txtTemat" Grid.Column="1" Grid.Row="0" Background="RosyBrown"  VerticalAlignment="Center" />
+
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="Priorytet" Grid.Column="0" Grid.Row="1"/>
+                <ComboBox x:Name="cBPriorytet" Grid.Column="1" Grid.Row="1" Background="RosyBrown" SelectedIndex="1"  VerticalAlignment="Center">
+                    <ComboBoxItem Content="niski"/>
+                    <ComboBoxItem Content="normalny"/>
+                    <ComboBoxItem Content="wysoki"/>
+                </ComboBox>
+
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="Termin" Grid.Column="0" Grid.Row="2"/>
+                <Calendar x:Name="cldData" Grid.Column="1" Grid.Row="2" Visibility="Hidden"/>
+                <CheckBox x:Name="chBSwitch" Grid.Column="1" Grid.Row="2" Visibility="Visible" HorizontalAlignment="Center" VerticalAlignment="Center" IsChecked="False" Content="Czy chcesz dodać termn do zadania"  Checked="chBSwitch_Checked"  />
+
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="Status" Grid.Column="0" Grid.Row="4"/>
+                <ComboBox x:Name="cBStatus" Grid.Column="1" Grid.Row="3" Background="RosyBrown" SelectedIndex="0"  VerticalAlignment="Center">
+                    <ComboBoxItem Content="nowy"/>
+                    <ComboBoxItem Content="W realizacji"/>
+                    <ComboBoxItem Content="zakończony"/>
+                </ComboBox>
+            </Grid>
+            
+            <!-- Opis-->
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Text="Opis" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <Grid Grid.Row="0" Grid.Column="1">
+                    <TextBox x:Name="txtOpis" Background="Gray" Foreground="WhiteSmoke" TextWrapping="Wrap" Padding="2" />
+                </Grid>
+            </Grid>
+            
+            <!-- Button - Zakoncz -->
+            <Grid Grid.Row="2" Margin="0 10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="4*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Column="1" x:Name="btnZapisz" Content="Zapisz" Background="OrangeRed" Click="btnZapisz_Click" />
+            </Grid>
+        </Grid>
+    </Border>
+</Window>

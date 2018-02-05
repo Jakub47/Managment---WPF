@@ -30,3 +30,5 @@ C:\Users\Ragnus\Desktop\Graphic applications\WPF\Zadania\Zadania\obj\Debug\MainW
 C:\Users\Ragnus\Desktop\Graphic applications\WPF\Zadania\Zadania\obj\Debug\Zadania.g.resources
 C:\Users\Ragnus\Desktop\Graphic applications\WPF\Zadania\Zadania\obj\Debug\Zadania.Properties.Resources.resources
 C:\Users\Ragnus\Desktop\Graphic applications\WPF\Zadania\Zadania\obj\Debug\Zadania.csproj.GenerateResource.Cache
+C:\Users\Ragnus\Desktop\Graphic applications\WPF\Zadania\Zadania\obj\Debug\Views\AddingTask.g.cs
+C:\Users\Ragnus\Desktop\Graphic applications\WPF\Zadania\Zadania\obj\Debug\Views\AddingTask.baml

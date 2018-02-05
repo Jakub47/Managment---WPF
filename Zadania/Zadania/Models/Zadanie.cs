@@ -39,9 +39,11 @@ namespace Zadania.Models
             }
         }
 
-        public Zadanie(string tT,string pR,DateTime tR,string sT)
+        public string Opis { get; set; }
+
+        public Zadanie(string tT,string pR,DateTime tR,string sT,string opis)
         {
-            Temat = tT; priorytet = pR; Termin = tR; Status = sT;
+            Temat = tT; priorytet = pR; Termin = tR; Status = sT; Opis = opis;
         }
 
         public Zadanie()
