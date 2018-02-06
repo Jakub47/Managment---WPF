@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Zadania.Models
 {
-    class Connect
+    public class Connect
     {
         private static string connectionString = "SERVER=localhost;DATABASE=zadania;UID=root;PASSWORD=;";
         private MySqlConnection connection = new MySqlConnection(connectionString); //Connect to our local database => Get Access

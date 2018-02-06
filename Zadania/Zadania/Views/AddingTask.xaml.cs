@@ -21,11 +21,11 @@ namespace Zadania.Views
     /// </summary>
     public partial class AddingTask : Window
     {
-        Connect connect;
+        OperacjeDb actionsOnDatabase;
         public AddingTask()
         {
             InitializeComponent();
-            connect = new Connect();
+            actionsOnDatabase = new OperacjeDb();
         }
 
         private void chBSwitch_Checked(object sender, RoutedEventArgs e)
@@ -39,28 +39,24 @@ namespace Zadania.Views
 
         private void btnZapisz_Click(object sender, RoutedEventArgs e)
         {
-            if (Zweryfikuj(txtTemat.Text,txtOpis.Text))
+            //Nie musze sprawdzac dropboxow czyli -Priortytet -Status,Kalendarza też nie trzeba -Calndar gdyż uwzględniłem nulleable,
+            //Jedyne co trzeba zweryfikować to string z +opis + Temat
+            if (Weryfikacja.Zweryfikuj(txtTemat.Text, txtOpis.Text))
             {
-                string command = "Insert Into dane(Temat,Priorytet,Termin,Status,Opis)" +
-                    "VALUES()";
-                MySqlCommand cmd = new MySqlCommand(command, connect.Connection);
-                connect.Connection.Open();
-                cmd.ExecuteReader(); //Add a new record to database
-                connect.Connection.Close();
-            }
-            else
-            {
-                MessageBox.Show("Prosze wprowadzic dane!\nTemat lub opis są puste")
-            }
-        }
+                Zadanie zadanie = new Zadanie(txtTemat.Text, cBPriorytet.SelectedValue.ToString(), Convert.ToString(cldData.SelectedDate.Value.ToShortDateString()), cBStatus.SelectedValue.ToString(), txtOpis.Text);
+                actionsOnDatabase.update(zadanie);
 
-        private bool Zweryfikuj(string temat,string opis)
-        {
-            //Determine whenever user actually write something in field's
-            if (!(temat.Equals("") || !(opis.Equals(""))))
-                return true;
+                //This window
+                this.Close();
+
+                //Main Windows
+                MainWindow.canRefresh = true;
+                MainWindow.win.Show();
+            }
             else
-                return false;
+            {
+                MessageBox.Show("Prosze wprowadzic dane!\nTemat lub opis są puste");
+            }
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Zadania.Models
 {
-    class Zadanie
+    public class Zadanie
     {
         public string Temat { get; set; }
         private string priorytet;
@@ -23,7 +23,19 @@ namespace Zadania.Models
             }
         }
 
-        public DateTime Termin { get; set; }
+        private string termin;
+        public string Termin
+        {
+            get
+            {
+                return termin;
+            }
+
+            set
+            {
+                termin = value;
+            }
+        }
 
         private string status;
 
@@ -41,19 +53,19 @@ namespace Zadania.Models
 
         public string Opis { get; set; }
 
-        public Zadanie(string tT,string pR,DateTime tR,string sT,string opis)
+        public Zadanie(string tT,string pR,string tR,string sT,string opis)
         {
             Temat = tT; priorytet = pR; Termin = tR; Status = sT; Opis = opis;
         }
 
         public Zadanie()
         {
-            Temat = ""; priorytet = ""; Termin = DateTime.Now; Status = "";
+            Temat = ""; priorytet = ""; Termin = ""; Status = "";
         }
 
         public override string ToString()
         {
-            return Temat + "\t\t\t" + Priorytet + "\n" + Convert.ToString(Termin) + "\t" + Status;
+            return Temat + "\t\t\t" + Priorytet + "\n" + Termin+ "\t" + Status;
         }
     }
 }
