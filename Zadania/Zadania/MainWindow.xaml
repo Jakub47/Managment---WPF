@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Zadania"
         mc:Ignorable="d" Background="#A27700"
-        Title="MainWindow" Height="600" Width="800">
+        Title="MainWindow" Height="600" Width="800" Activated="Window_Activated">
     <Border Padding="20">
         <Grid Background="#606060">
 
