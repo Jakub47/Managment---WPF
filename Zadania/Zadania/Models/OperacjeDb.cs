@@ -28,7 +28,7 @@ namespace Zadania.Models
 
         public void update(Zadanie obj)
         {
-            string command = String.Format("Insert Into dane(Temat,Priorytet,Termin,Status,Opis) VALUES('{0}','{1}','cz','qwe','ds')",obj.Temat,obj.Priorytet);
+            string command = String.Format("Insert Into dane(Temat,Priorytet,Termin,Status,Opis) VALUES('{0}','{1}','cz','qwe','ds')",obj.Temat,obj.Priorytet,obj.Termin,obj.Status,obj.Opis);
             MySqlCommand cmd = new MySqlCommand(command, Connection);
             //Insert Into dane(Temat,Priorytet,Termin,Status,Opis) VALUES("dsadas","qweqwe",20/12/2012,"ddsad","sdas")
             Connection.Open();

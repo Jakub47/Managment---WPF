@@ -43,7 +43,14 @@ namespace Zadania.Views
             //Jedyne co trzeba zweryfikować to string z +opis + Temat
             if (Weryfikacja.Zweryfikuj(txtTemat.Text, txtOpis.Text))
             {
-                Zadanie zadanie = new Zadanie(txtTemat.Text, cBPriorytet.SelectedValue.ToString(), Convert.ToString(cldData.SelectedDate.Value.ToShortDateString()), cBStatus.SelectedValue.ToString(), txtOpis.Text);
+                ComboBoxItem typeItem = (ComboBoxItem)cBPriorytet.SelectedItem;
+                string valuePrio = typeItem.Content.ToString();
+
+                ComboBoxItem typeItem2 = (ComboBoxItem)cBStatus.SelectedItem;
+                string valueST = typeItem2.Content.ToString();
+
+
+                Zadanie zadanie = new Zadanie(txtTemat.Text, valuePrio, Convert.ToString(cldData.SelectedDate.Value.ToShortDateString()), valueST, txtOpis.Text);
                 actionsOnDatabase.update(zadanie);
 
                 //This window
