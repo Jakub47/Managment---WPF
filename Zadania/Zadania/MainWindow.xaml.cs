@@ -25,7 +25,6 @@ namespace Zadania
     public partial class MainWindow : Window
     {
         OperacjeDb actionsOnDatabase;
-        public static  Win win;
         public static bool canRefresh;
         DataTable dt;
 
@@ -33,7 +32,6 @@ namespace Zadania
         {
             InitializeComponent();
             actionsOnDatabase = new OperacjeDb();
-            win = new Win(this);
             canRefresh = false;
             Refresh();    
         }
@@ -49,7 +47,6 @@ namespace Zadania
         {
             //Create a Logic for adding a new Task to the DataBase! Also remember about refreshing!!!!
             this.Hide();
-            win = new Win(this);
             AddingTask aT = new AddingTask();  aT.Show();
         }
 
@@ -63,6 +60,11 @@ namespace Zadania
                 dt = actionsOnDatabase.select("select * from dane");
                 this.Show();
             }
+        }
+
+        public static void Pokaz()
+        {
+            new MainWindow().Show();
         }
 
         private void Refresh()
