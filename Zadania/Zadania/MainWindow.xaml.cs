@@ -36,7 +36,7 @@ namespace Zadania
             Refresh();    
         }
 
-        private void createGrid(Grid original,Grid clone,Zadanie element)
+        private void createGrid(Grid clone,Zadanie element)
         {
             TextBlock t = new TextBlock(); t.Text = "";
             t.Text += element.ToString(); t.Foreground = new SolidColorBrush(Colors.Blue); t.FontSize = 18;
@@ -92,10 +92,32 @@ namespace Zadania
             for (int i = 0; i < ListZZadaniami.ListZadan.Count(); i++)
             {
                 Grid dodaj = new Grid();
-                createGrid(gdZadanie, dodaj, ListZZadaniami.ListZadan.ElementAtOrDefault(i));
+                createGrid(dodaj, ListZZadaniami.ListZadan.ElementAtOrDefault(i));
+                dodaj.Margin = new Thickness(0,5,0,0);
+                dodaj.PreviewMouseLeftButtonDown += Dodaj_PreviewMouseLeftButtonDown;
                 ZbiorZadan.Children.Add(dodaj);
             }
 
+        }
+
+        private void Dodaj_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            var item = ((Grid)(sender)); List<string> items = new List<string>();
+            foreach(TextBlock txtTemat in item.Children)
+            {
+                items.Add(txtTemat.Text);
+            }
+            //Pierwszy/t/t/t
+            string result = "";
+            for(int i =0;i<items.ElementAt(0).Length;i++)
+            {
+                if (items.ElementAt(0).ElementAt(i) == '\t') break;
+                    result += items.ElementAt(0).ElementAt(i);
+            }
+
+            txtOpisGlowny.Text = string.Empty;
+            txtOpisGlowny.Text = actionsOnDatabase.find(result);
+            //txtOpisGlowny.Text += ((Grid)(sender)).Children.Fo
         }
     }
 }

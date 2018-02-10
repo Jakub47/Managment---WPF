@@ -36,5 +36,17 @@ namespace Zadania.Models
             Connection.Close();
             //
         }
+
+        public string find(string Temat)
+        {
+            string result = "";
+            string command = String.Format("Select Opis from dane Where Temat = '{0}'", Temat);
+            MySqlCommand cmd = new MySqlCommand(command, Connection);
+            Connection.Open();
+            MySqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read()) result += reader.GetString(0);
+            Connection.Close();
+            return result;
+        }
     }
 }
