@@ -48,5 +48,15 @@ namespace Zadania.Models
             Connection.Close();
             return result;
         }
+
+        public void delete(string opis)
+        {
+            string command = String.Format("DELETE FROM dane WHERE Opis = '{0}'", opis);
+            MySqlCommand cmd = new MySqlCommand(command, Connection);
+            Connection.Open();
+            cmd.ExecuteReader();
+            Connection.Close();
+
+        }
     }
 }
