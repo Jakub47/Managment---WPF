@@ -119,5 +119,18 @@ namespace Zadania
             txtOpisGlowny.Text = actionsOnDatabase.find(result);
             //txtOpisGlowny.Text += ((Grid)(sender)).Children.Fo
         }
+
+        private void btnUsun_Click(object sender, RoutedEventArgs e)
+        {
+            actionsOnDatabase.delete(txtOpisGlowny.Text);
+            Refresh();
+            txtOpisGlowny.Text = "";
+        }
+
+        private void btnZmodyfikuj_Click(object sender, RoutedEventArgs e)
+        {
+            //Po 10/02/2018 -> Masz Stworzyć Widok i Zmodyfikować Dane
+            //Następnie Wprowadzić Sortowanie
+        }
     }
 }

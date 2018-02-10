@@ -158,8 +158,8 @@ Phasellus vitae iaculis tortor, et finibus diam. Aliquam fringilla ornare urna e
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
-                <Button Background="#d10506" Margin="5 0 5 0" x:Name="btnDelete" Grid.Column="0" Grid.Row="1" Content="Usun" />
-                <Button Background="#e7d824" Margin="5 0 5 0" x:Name="btnModify" Grid.Column="1" Grid.Row="1" Content="Zmodyfikuj" />
+                <Button x:Name="btnUsun" Click="btnUsun_Click" Background="#d10506" Margin="5 0 5 0"  Grid.Column="0" Grid.Row="1" Content="Usun" />
+                <Button x:Name="btnZmodyfikuj" Click="btnZmodyfikuj_Click" Background="#e7d824" Margin="5 0 5 0" Grid.Column="1" Grid.Row="1" Content="Zmodyfikuj" />
             </Grid>
         </Grid>
     </Border>
