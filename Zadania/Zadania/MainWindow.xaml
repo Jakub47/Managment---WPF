@@ -121,7 +121,7 @@
             
             <!-- Content -->
             <Grid Grid.Column="1" Grid.Row="1">
-                <TextBlock TextWrapping="Wrap" Foreground="#FFCBC5C5"
+                <TextBlock x:Name="txtOpisGlowny" TextWrapping="Wrap" Foreground="#FFCBC5C5"
                     Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ullamcorper ligula id lectus ullamcorper vulputate. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce semper nisi ut nisl cursus, vitae fermentum leo ornare. Fusce eleifend neque in tincidunt vulputate. Morbi in vestibulum lorem. Suspendisse potenti. Mauris aliquet sed justo vel lobortis. Sed odio libero, ornare egestas sollicitudin nec, fermentum eget neque. Cras luctus purus vitae nisi rutrum elementum sed sed sapien. Suspendisse semper eros libero, non mollis velit condimentum condimentum. Cras sit amet mattis nulla. Fusce vel libero et massa faucibus tristique quis sed ex. Proin pellentesque nec ex a congue. Aenean commodo ultricies lectus, sed tincidunt tellus posuere quis. In porta maximus pellentesque.
 
 Sed finibus pulvinar eros ac pharetra. Curabitur sed efficitur libero. Aenean tempus, est eget aliquam laoreet, sapien felis elementum arcu, eget viverra lacus enim in nibh. Sed blandit at dui faucibus tincidunt. Suspendisse sit amet maximus diam. Aliquam purus dui, sollicitudin eget aliquet a, finibus eget massa. Donec in dolor consectetur, tincidunt nunc quis, molestie dui. Vestibulum venenatis massa id lacus egestas, ut iaculis dui interdum. Sed vestibulum vehicula sodales. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi vel erat porttitor, faucibus lectus a, efficitur sapien.
