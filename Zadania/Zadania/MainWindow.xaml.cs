@@ -27,6 +27,7 @@ namespace Zadania
         OperacjeDb actionsOnDatabase;
         public static bool canRefresh;
         DataTable dt;
+        private int ZadanieId = -1;
 
         public MainWindow()
         {
@@ -117,6 +118,7 @@ namespace Zadania
 
             txtOpisGlowny.Text = string.Empty;
             txtOpisGlowny.Text = actionsOnDatabase.find(result);
+            ZadanieId = actionsOnDatabase.findId(result);
             //txtOpisGlowny.Text += ((Grid)(sender)).Children.Fo
         }
 
@@ -131,6 +133,10 @@ namespace Zadania
         {
             //Po 10/02/2018 -> Masz Stworzyć Widok i Zmodyfikować Dane
             //Następnie Wprowadzić Sortowanie
+            if(ZadanieId < 0) { MessageBox.Show("Nie można zmodyfikować Zadanie"); return; }
+            this.Hide();
+            ModifyTask mT = new ModifyTask(ZadanieId); mT.Show(); 
+
         }
     }
 }
