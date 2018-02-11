@@ -51,7 +51,7 @@ namespace Zadania.Views
 
 
                 Zadanie zadanie = new Zadanie(txtTemat.Text, valuePrio, Convert.ToString(cldData.SelectedDate.Value.ToShortDateString()), valueST, txtOpis.Text);
-                //actionsOnDatabase.update(zadanie);
+                actionsOnDatabase.update(zadanie);
 
                 //This window
                 this.Close();
