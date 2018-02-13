@@ -16,9 +16,6 @@ namespace Zadania.Models
             get { return priorytet; }
             set
             {
-                if (value != "niski" || value != "normalny" || value != "wysoki")
-                    priorytet = "normalny";
-                else
                     priorytet = value;
             }
         }
@@ -44,9 +41,6 @@ namespace Zadania.Models
             get { return status; }
             set
             {
-                if (value != "nowy" || value != "W realizacji" || value != "zakończony")
-                    status = "nowy";
-                else
                     status = value;
             }
         }

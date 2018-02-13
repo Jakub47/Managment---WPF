@@ -46,7 +46,7 @@ namespace Zadania.Views
             ComboBoxItem typeItem2 = (ComboBoxItem)cBStatus.SelectedItem;
             string valueST = typeItem2.Content.ToString();
 
-            actionsOnDatabase.update(id,txtTemat.Text, valuePrio, Convert.ToString(cldData.SelectedDate.Value.ToShortDateString()), valueST, txtOpis.Text);
+            actionsOnDatabase.update(id,txtTemat.Text, valuePrio, cldData.SelectedDate.Value, valueST, txtOpis.Text);
 
             //This window
             this.Close();
