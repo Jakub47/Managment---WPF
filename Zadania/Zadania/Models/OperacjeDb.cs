@@ -21,15 +21,52 @@ namespace Zadania.Models
             return final;
         }
 
+        public DataTable sort(string word)
+        {
+            switch(word)
+            {
+                case "najwcześniej": word = "SELECT * FROM dane ORDER BY Termin"; break;
+                case "najpożniej": word = "SELECT * FROM dane ORDER BY Termin DESC"; break;
+
+                case "niski": word = "SELECT * FROM  dane Where Priorytet = 'niski'"; break;
+                case "normalny": word = "SELECT * FROM dane Where Priorytet = 'normalny'"; break;
+                case "wysoki": word = "SELECT * FROM dane Where Priorytet = 'wysoki'"; break;
+
+                case "nowy": word = "SELECT * FROM dane Where Status = 'nowy'"; break;
+                case "w realizacji": word = "SELECT * FROM dane Where Status = 'W realizacji'"; break;
+                case "zakończony": word = "SELECT * FROM dane Where Status = 'zakończony'"; break;
+            }
+            MySqlCommand cmd = new MySqlCommand(word, Connection);
+            Connection.Open();
+            DataTable final = new DataTable();
+            final.Load(cmd.ExecuteReader());
+            Connection.Close();
+            return final;
+        }
+
         public void update(Zadanie obj)
         {
-            string command = String.Format("Insert Into dane(Temat,Priorytet,Termin,Status,Opis) VALUES('{0}','{1}','{2}','{3}','{4}')",obj.Temat,obj.Priorytet,obj.Termin,obj.Status,obj.Opis);
+            DateTime termin = DateTime.Parse(obj.Termin);
+            string corrected = termin.ToString("yyyy-MM-dd 00:00:00");
+
+            string command = String.Format("Insert Into dane(Temat,Priorytet,Termin,Status,Opis) VALUES('{0}','{1}','{2}','{3}','{4}')",obj.Temat,obj.Priorytet, corrected, obj.Status,obj.Opis);
             MySqlCommand cmd = new MySqlCommand(command, Connection);
             //Insert Into dane(Temat,Priorytet,Termin,Status,Opis) VALUES("dsadas","qweqwe",20/12/2012,"ddsad","sdas")
             Connection.Open();
             cmd.ExecuteReader(); //Add a new record to database
             Connection.Close();
             //
+        }
+
+        public void update(int id, string temat, string priorytet, DateTime termin, string status, string opis)
+        {
+            string corrected = termin.ToString("yyyy-MM-dd 00:00:00");
+            string command = String.Format("UPDATE dane SET Temat = '{0}',Priorytet = '{1}',Termin='{2}',Status='{3}',Opis='{4}' WHERE id = {5}",
+                temat, priorytet, corrected, status, opis, id);
+            MySqlCommand cmd = new MySqlCommand(command, Connection);
+            Connection.Open();
+            cmd.ExecuteReader();
+            Connection.Close();
         }
 
         public string find(string Temat)
@@ -120,16 +157,6 @@ namespace Zadania.Models
         public void delete(string opis)
         {
             string command = String.Format("DELETE FROM dane WHERE Opis = '{0}'", opis);
-            MySqlCommand cmd = new MySqlCommand(command, Connection);
-            Connection.Open();
-            cmd.ExecuteReader();
-            Connection.Close();
-        }
-
-        public void update(int id,string temat,string priorytet,string termin,string status,string opis)
-        {
-            string command = String.Format("UPDATE dane SET Temat = '{0}',Priorytet = '{1}',Termin='{2}',Status='{3}',Opis='{4}'",
-                temat,priorytet,termin,status,opis);
             MySqlCommand cmd = new MySqlCommand(command, Connection);
             Connection.Open();
             cmd.ExecuteReader();

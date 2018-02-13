@@ -40,14 +40,14 @@
 
                 <!--Termin-->
                 <TextBlock Grid.Column="0" Grid.Row="1" Text="Termin" HorizontalAlignment="Center" FontSize="20" FontFamily="SimSun" Foreground="#FFCBC5C5" />
-                <ComboBox Margin="0 0 5 0" VerticalAlignment="Center" Grid.Column="0" Grid.Row="2" SelectedIndex="0">
+                <ComboBox SelectionChanged="cBSortByDate_SelectionChanged" x:Name="cBSortByDate" Margin="0 0 5 0" VerticalAlignment="Center" Grid.Column="0" Grid.Row="2" SelectedIndex="0">
                     <ComboBoxItem Content="Najwcześniej" />
                     <ComboBoxItem Content="Najpożniej"/>
                 </ComboBox>
 
                 <!--Priorytet-->
                 <TextBlock Grid.Column="1" Grid.Row="1" Text="Priorytet" HorizontalAlignment="Center" FontSize="20" FontFamily="SimSun" Foreground="#FFCBC5C5" />
-                <ComboBox VerticalAlignment="Center" Grid.Column="1" Grid.Row="2" SelectedIndex="1">
+                <ComboBox SelectionChanged="cBSortByPriorytet_SelectionChanged" x:Name="cBSortByPriorytet" VerticalAlignment="Center" Grid.Column="1" Grid.Row="2" SelectedIndex="1">
                     <ComboBoxItem Content="Niski" />
                     <ComboBoxItem Content="Normalny"/>
                     <ComboBoxItem Content="Wysoki"/>
@@ -55,7 +55,7 @@
 
                 <!--Status-->
                 <TextBlock Grid.Column="2" Grid.Row="1" Text="Status" HorizontalAlignment="Center" FontSize="20" FontFamily="SimSun" Foreground="#FFCBC5C5" />
-                <ComboBox Margin="5 0 0 0" VerticalAlignment="Center" Grid.Column="2" Grid.Row="2" SelectedIndex="0">
+                <ComboBox SelectionChanged="cbSortByStatus_SelectionChanged" x:Name="cbSortByStatus" Margin="5 0 0 0" VerticalAlignment="Center" Grid.Column="2" Grid.Row="2" SelectedIndex="0">
                     <ComboBoxItem Content="Nowy" />
                     <ComboBoxItem Content="W Realizacji"/>
                     <ComboBoxItem Content="Zakończony"/>
